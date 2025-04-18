@@ -90,12 +90,12 @@
                      ($op[2:0] == 3'b001) ? $diff :
                      ($op[2:0] == 3'b010) ? $prod :
                      ($op[2:0] == 3'b010) ? $quot :
->>1$out;
+                     >>1$out;
 
           // Select the MEM and retaining if no calculation.
          $mem[7:0] = $reset ? 8'b0 :
                      $valid && ($op[2:0] == 3'b101) ? $val1 :
->>1$mem;
+                     >>1$mem;
        @3
          // Display lower hex digit on 7-segment display.
          $digit[3:0] = $out[3:0];
